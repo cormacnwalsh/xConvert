@@ -1,22 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package xconvert;
 
-/**
- *
- * @author Cormac
- */
+
 public class XConvert {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         System.out.println("qwerty");
         System.out.println("FLOOOP");
+        System.out.println("FLip");
+        System.out.println("FLuckP");
     }
     
 }
