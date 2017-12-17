@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class Convert {
     
     private String output;
+    private int select;
     
     public void start(){
         
@@ -31,7 +32,7 @@ public class Convert {
             
             case 2 : 
                 Length l = new Length();
-                int select = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                select = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                         + "1 - Imperial\n"
                         + "2 - Metric\n"
                         + "3 - BACK"));
@@ -70,6 +71,28 @@ public class Convert {
                     
                     output = l.insert2(type,sType,value);
                 }
+                break;
+                
+            case 3:
+                Temperature t = new Temperature();
+                int left = Integer.parseInt(JOptionPane.showInputDialog("Select\n"
+                        + "1 - Kelvin\n"
+                        + "2 - Fahrenheit\n"
+                        + "3 - Celsius\n"
+                        + "4 - BACK"));
+                
+                double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                
+                int right = Integer.parseInt(JOptionPane.showInputDialog("Select\n"
+                        + "1 - Kelvin\n"
+                        + "2 - Fahrenheit\n"
+                        + "3 - Celsius\n"
+                        + "4 - BACK"));
+                        
+                output = t.insert(left, right, value);
+                
+                break;
+                
                 
         }
         
