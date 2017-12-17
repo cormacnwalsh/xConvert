@@ -1,4 +1,5 @@
 
+
 package xconvert;
 
 import javax.swing.JOptionPane;
@@ -12,7 +13,8 @@ public class XConvert
         //Variables
         int one = 1;
         int zero = 0;
-        String dog = old();
+        String dog = old() + " " + bark();
+        
         
         //Process
         System.out.println("qwerty");
@@ -31,8 +33,14 @@ public class XConvert
     
     public static String old()
     {
-        return "Charlie";
+        return "Charlie \n";
     } //End old
     
+    public static String bark()
+    {
+        return "Woof, Woof";
+    } //End bark
+    
 }//End Class
+
 
