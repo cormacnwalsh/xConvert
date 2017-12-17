@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Convert {
     
-    double output = 0;
+    private String output;
     
     public void start(){
         
@@ -44,7 +44,6 @@ public class Convert {
                             + "4 - BACK"));
                     
                     double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
-                    
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - Centimeters\n"
