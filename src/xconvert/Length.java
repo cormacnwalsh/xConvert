@@ -5,6 +5,8 @@
  */
 package xconvert;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cormac
@@ -19,28 +21,35 @@ public class Length{
     private final double mt = 1;
     private final double km = .001;
     
-    public Length(){
-        
-    }
-    
     public double insert(int type, int sType, double value){
         double l = 0;
         double r = 0;
         switch(type){
             case 1:
                 l = inches;
+                break;
             case 2:
                 l = feet;
+                break;
             case 3 :
                 l = miles;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         switch(sType){
             case 1:
                 r = cm;
+                break;
             case 2:
                 r = mt;
+                break;
             case 3 :
                 r = km;
+                break;
+                
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         
         double output = convert(l, r, value);

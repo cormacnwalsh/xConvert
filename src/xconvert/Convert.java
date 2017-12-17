@@ -54,7 +54,24 @@ public class Convert {
                             
                     output = l.insert(type,sType,value);
                     
+                }else if(select == 2){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters\n"
+                            + "2 - Meters\n"
+                            + "3 - Kilometers\n"
+                            + "BACK"));
+                    
+                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters\n"
+                            + "2 - Meters\n"
+                            + "3 - Kilometers\n"
+                            + "BACK"));
+                    
+                    output = l.insert(type,sType,value);
                 }
+                
         }
         
         JOptionPane.showMessageDialog(null, "Answer is: " + output);
