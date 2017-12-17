@@ -1,22 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package xconvert;
 
-/**
- *
- * @author Cormac
- */
-public class XConvert {
+import javax.swing.JOptionPane;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+public class XConvert 
+{
+
+    public static void main(String[] args) 
+    {
+        
+        //Variables
+        int one = 1;
+        int zero = 0;
+        String dog = old();
+        
+        //Process
         System.out.println("qwerty");
         System.out.println("FLOOOP");
-    }
+        System.out.println("FLip");
+        System.out.println("FLuckP");
+
+        if(one > zero)
+        {
+           System.out.println("One is greater than Zero!");
+        }//if
+              
+        JOptionPane.showMessageDialog(null, dog);
+        
+    }//End Main
     
-}
+    public static String old()
+    {
+        return "Charlie";
+    } //End old
+    
+}//End Class
+
