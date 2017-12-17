@@ -24,10 +24,10 @@ public class XConvert {
         
         JOptionPane.showMessageDialog(null, dog);
 
-    }
+    }//End Main
     
     public static String old(){
         return "Charlie";
-    } 
+    } //End old
     
-}
+}//End Main
