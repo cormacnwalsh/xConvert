@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Cormac
  */
 public class Length{
-    
+    //Base unit for ratio is meter
     private final double inches = 39.3701;
     private final double feet = 3.28084;
     private final double miles = .0016093;
