@@ -18,7 +18,7 @@ public class Temperature
     
     private double output = 0;
      
-    public double insert(int type, int sType, double value)
+    public String insert(int type, int sType, double value)
     {
         double left = 0;
         double right = 0;
@@ -40,13 +40,13 @@ public class Temperature
             
         }
         
-        output = convert(left, right, value);
+        String output = convert(left, right, value);
         
         return output;
     }
     
 
-    public double convert(double left, double right, double input) 
+    public String convert(double left, double right, double input) 
     {
         if (left == KELVIN && right == FAHRENHEIT)
         {
@@ -61,6 +61,6 @@ public class Temperature
             output = 0; //error dialog
         }
             
-        return output;
+        return Double.toString(output);
     } 
 }
