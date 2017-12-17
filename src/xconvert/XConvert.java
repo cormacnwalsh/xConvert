@@ -19,6 +19,10 @@ public class XConvert
         System.out.println("FLOOOP");
         System.out.println("FLip");
         System.out.println("FLuckP");
+        
+        System.out.println("Test");
+        System.out.println("git");
+        System.out.println("version");
 
         if(one > zero)
         {
