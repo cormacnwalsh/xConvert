@@ -12,6 +12,7 @@ public class XConvert
         //Variables
         int one = 1;
         int zero = 0;
+        String dog = old();
         
         //Process
         System.out.println("qwerty");
@@ -23,17 +24,15 @@ public class XConvert
         {
            System.out.println("One is greater than Zero!");
         }//if
-        
-        String dog = old();
-        
+              
         JOptionPane.showMessageDialog(null, dog);
-   
-
+        
     }//End Main
     
-    public static String old(){
+    public static String old()
+    {
         return "Charlie";
     } //End old
     
-}//End Main
+}//End Class
 
