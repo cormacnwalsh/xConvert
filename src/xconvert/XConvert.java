@@ -3,19 +3,23 @@ package xconvert;
 
 import javax.swing.JOptionPane;
 
+public class XConvert 
+{
 
-public class XConvert {
-
-    
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
+        
+        //Variables
+        int one = 1;
+        int zero = 0;
+        
+        //Process
         System.out.println("qwerty");
         System.out.println("FLOOOP");
         System.out.println("FLip");
         System.out.println("FLuckP");
 
-        int one = 1;
-        
-        if(one > 0)
+        if(one > zero)
         {
            System.out.println("One is greater than Zero!");
         }//if
@@ -23,6 +27,7 @@ public class XConvert {
         String dog = old();
         
         JOptionPane.showMessageDialog(null, dog);
+   
 
     }//End Main
     
@@ -31,3 +36,4 @@ public class XConvert {
     } //End old
     
 }//End Main
+
