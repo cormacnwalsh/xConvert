@@ -5,6 +5,8 @@
  */
 package xconvert;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cormac
@@ -19,39 +21,83 @@ public class Length{
     private final double mt = 1;
     private final double km = .001;
     
-    public Length(){
-        
-    }
-    
-    public double insert(int type, int sType, double value){
+    public String insert(int type, int sType, double value){
         double l = 0;
         double r = 0;
         switch(type){
             case 1:
                 l = inches;
+                break;
             case 2:
                 l = feet;
+                break;
             case 3 :
                 l = miles;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         switch(sType){
             case 1:
                 r = cm;
+                break;
             case 2:
                 r = mt;
+                break;
             case 3 :
                 r = km;
+                break;
+                
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         
-        double output = convert(l, r, value);
+        String output = convert(l, r, value);
+        
+        return output;
+    }
+    
+    public String insert2(int type, int sType, double value){
+        double l = 0;
+        double r = 0;
+        switch(type){
+            case 1:
+                l = cm;
+                break;
+            case 2:
+                l = mt;
+                break;
+            case 3 :
+                l = km;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
+        }
+        
+        switch(sType){
+            case 1:
+                r = inches;
+                break;
+            case 2:
+                r = feet;
+                break;
+            case 3 :
+                r = miles;
+                break;
+                
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
+        }
+        
+        String output = convert(l, r, value);
         
         return output;
     }
     
 
-    public double convert(double l, double r, double input) {
+    private String convert(double l, double r, double input) {
         double ratio = r/l;
         double output = input*ratio;        
-        return output;
+        return Double.toString(output);
     } 
 }

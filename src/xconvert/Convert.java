@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Convert {
     
-    double output = 0;
+    private String output;
     
     public void start(){
         
@@ -45,7 +45,6 @@ public class Convert {
                     
                     double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
-                    
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - Centimeters\n"
                             + "2 - Meters\n"
@@ -54,7 +53,24 @@ public class Convert {
                             
                     output = l.insert(type,sType,value);
                     
+                }else if(select == 2){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters\n"
+                            + "2 - Meters\n"
+                            + "3 - Kilometers\n"
+                            + "BACK"));
+                    
+                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - inches\n"
+                            + "2 - feet\n"
+                            + "3 - miles\n"
+                            + "4 - BACK"));
+                    
+                    output = l.insert2(type,sType,value);
                 }
+                
         }
         
         JOptionPane.showMessageDialog(null, "Answer is: " + output);
