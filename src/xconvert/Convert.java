@@ -64,12 +64,12 @@ public class Convert {
                     double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
-                            + "1 - Centimeters\n"
-                            + "2 - Meters\n"
-                            + "3 - Kilometers\n"
-                            + "BACK"));
+                            + "1 - inches\n"
+                            + "2 - feet\n"
+                            + "3 - miles\n"
+                            + "4 - BACK"));
                     
-                    output = l.insert(type,sType,value);
+                    output = l.insert2(type,sType,value);
                 }
                 
         }

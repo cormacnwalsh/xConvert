@@ -57,6 +57,43 @@ public class Length{
         return output;
     }
     
+    public double insert2(int type, int sType, double value){
+        double l = 0;
+        double r = 0;
+        switch(type){
+            case 1:
+                r = cm;
+                break;
+            case 2:
+                r = mt;
+                break;
+            case 3 :
+                r = km;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
+        }
+        
+        switch(sType){
+            case 1:
+                l = inches;
+                break;
+            case 2:
+                l = feet;
+                break;
+            case 3 :
+                l = miles;
+                break;
+                
+            default:
+                JOptionPane.showMessageDialog(null, "Do it right asshole");
+        }
+        
+        double output = convert(l, r, value);
+        
+        return output;
+    }
+    
 
     public double convert(double l, double r, double input) {
         double ratio = r/l;
