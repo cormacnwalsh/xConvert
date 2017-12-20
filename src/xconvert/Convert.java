@@ -36,40 +36,40 @@ public class Convert {
                 
                 if(select == 1){
                     int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
-                            + "1 - inches\n"
-                            + "2 - feet\n"
-                            + "3 - miles\n"
+                            + "1 - ounce\n"
+                            + "2 - pound\n"
+                            + "3 - stone\n"
                             + "4 - BACK"));
                     
                     double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
-                            + "1 - Centimeters\n"
-                            + "2 - Meters\n"
-                            + "3 - Kilometers\n"
+                            + "1 - gram\n"
+                            + "2 - kilogram\n"
+                            + "3 - tonne\n"
                             + "BACK"));
                             
                     output = w.insertWeight(type,sType,value);
                     
                 }
-                /*else if(select == 2){
-                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
-                            + "1 - Centimeters\n"
-                            + "2 - Meters\n"
-                            + "3 - Kilometers\n"
+                else if(select == 2){
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - gram\n"
+                            + "2 - kilogram\n"
+                            + "3 - tonne\n"
                             + "BACK"));
                     
                     double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
-                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
-                            + "1 - inches\n"
-                            + "2 - feet\n"
-                            + "3 - miles\n"
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - ounce\n"
+                            + "2 - pound\n"
+                            + "3 - stone\n"
                             + "4 - BACK"));
                     
-                    output = w.insert2(type,sType,value);
+                    output = w.insertWeight2(type,sType,value);
                 }
-                break;*/
+                break;
             
             case 2 : 
                 Length l = new Length();

@@ -60,7 +60,45 @@ public class Weight
         String output = convert(l, r, value);
         
         return output;
-    }//insert
+    }//insertWeight
+    
+    public String insertWeight2(int type, int sType, double value)
+    {
+        double l=0;
+        double r=0;
+        switch(sType)
+        {
+            case 1:
+                r = g;
+                break;
+            case 2:
+                r = kg;
+                break;
+            case 3 :
+                r = tonne;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);         
+        }//switch
+        switch(type)
+        {
+            case 1:
+                l = ounce;
+                break;
+            case 2:
+                l = pound;
+                break;
+            case 3 :
+                l = stone;
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);
+        }//switch
+        
+        String output = convert(l, r, value);
+        
+        return output;
+    }//insertWeight2
     
 
     public String convert(double l, double r, double input)
