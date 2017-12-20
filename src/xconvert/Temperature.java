@@ -19,7 +19,7 @@ public class Temperature
     private double output = 0;
      
     //insert inputs
-    public String insert(int type, int sType, double value)
+    public double insert(int type, int sType, double value)
     {
         //local variables
         double left = 0;
@@ -62,13 +62,13 @@ public class Temperature
             
         }
         
-        String output = convert(left, right, value);
+        double output = convert(left, right, value);
         
         return output;
     }//insert
     
     //conversion formulas
-    public String convert(double left, double right, double input) 
+    public double convert(double left, double right, double input) 
     {
         //kelvin formulas
         if (left == KELVIN && right == KELVIN)
@@ -114,6 +114,6 @@ public class Temperature
             output = 0; //add error dialog
         }
             
-        return Double.toString(output);
+        return output;
     } //convert
 } //Temperature

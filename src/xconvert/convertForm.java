@@ -5,6 +5,8 @@
  */
 package xconvert;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Cormac
@@ -14,6 +16,7 @@ public class convertForm extends javax.swing.JFrame {
     /**
      * Creates new form convertForm
      */
+    DecimalFormat df = new DecimalFormat("#,###.###");
     public convertForm() {
         initComponents();
     }
@@ -44,6 +47,7 @@ public class convertForm extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(311, 251));
 
         jWeightIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ounce", "pound", "stone" }));
+        jWeightIn.setToolTipText("");
 
         jWeightOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
 
@@ -131,7 +135,7 @@ public class convertForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jInField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jOutField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jConvertButton)
                 .addGap(28, 28, 28))
         );
@@ -140,7 +144,16 @@ public class convertForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jConvertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConvertButtonActionPerformed
-        // TODO add your handling code here:
+        
+        if(jSelect.getSelectedItem().equals("Weight")){
+            weightCalc();
+        }
+        else if(jSelect.getSelectedItem().equals("Length")){
+            lengthCalc();
+        }else if(jSelect.getSelectedItem().equals("Temperature")){
+            tempCalc();
+        }
+        
     }//GEN-LAST:event_jConvertButtonActionPerformed
 
     private void jSelectItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jSelectItemStateChanged
@@ -202,6 +215,42 @@ public class convertForm extends javax.swing.JFrame {
                 
             }
         });
+    }
+    
+    private void weightCalc(){
+        Weight w = new Weight();
+        
+        int leftType = jWeightIn.getSelectedIndex()+1;
+        int rightType = jWeightOut.getSelectedIndex()+1;
+        
+        double value = Double.parseDouble(jInField.getText());
+        double ans = w.insertWeight(leftType, rightType, value);
+        
+        jOutField.setText(df.format(ans));
+    }
+    
+    private void lengthCalc(){
+        Length l = new Length();
+        
+        int leftType = jLengthIn.getSelectedIndex()+1;
+        int rightType = jLengthOut.getSelectedIndex()+1;
+        
+        double value = Double.parseDouble(jInField.getText());
+        double ans = l.insert(leftType, rightType, value);
+        
+        jOutField.setText(df.format(ans));
+    }
+    
+    private void tempCalc(){
+        Temperature t = new Temperature();
+        
+        int leftType = jTempIn.getSelectedIndex()+1;
+        int rightType = jTempOut.getSelectedIndex()+1;
+        
+        double value = Double.parseDouble(jInField.getText());
+        double ans = t.insert(leftType, rightType, value);
+        
+        jOutField.setText(df.format(ans));
     }
     
     
