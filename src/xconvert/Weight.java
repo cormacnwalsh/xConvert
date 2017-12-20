@@ -13,7 +13,8 @@ import javax.swing.JOptionPane;
  *
  * @author Cormac, Darragh, Anthony
  */
-public class Weight{
+public class Weight
+{
     
     private final double ounce = 35.274;
     private final double pound = 2.20462;
@@ -27,7 +28,8 @@ public class Weight{
     {
         double l=0;
         double r=0;
-        switch(type){
+        switch(type)
+        {
             case 1:
                 l = ounce;
                 break;
@@ -40,7 +42,8 @@ public class Weight{
             default:
                 JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);
         }//switch
-        switch(sType){
+        switch(sType)
+        {
             case 1:
                 r = g;
                 break;
