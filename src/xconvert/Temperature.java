@@ -18,37 +18,64 @@ public class Temperature
     
     private double output = 0;
      
+    //insert inputs
     public String insert(int type, int sType, double value)
     {
+        //local variables
         double left = 0;
         double right = 0;
+        
+        //left input
         switch(type)
         {
             case 1:
                 left = KELVIN;
                 break;
             
+            case 2:
+                left = CELSIUS;
+                break;
+            
+            case 3:
+                left = FAHRENHEIT;
+                break;
+            default:
+                left = KELVIN;
         }
+        //right input
         switch(sType)
         {
             case 1:
+                right = KELVIN;
+                break;
+            
+            case 2:
                 right = CELSIUS;
                 break;
-            case 2:
+            
+            case 3:
                 right = FAHRENHEIT;
                 break;
+                
+            default:
+                right = KELVIN;
             
         }
         
         String output = convert(left, right, value);
         
         return output;
-    }
+    }//insert
     
-
+    //conversion formulas
     public String convert(double left, double right, double input) 
     {
-        if (left == KELVIN && right == FAHRENHEIT)
+        //kelvin formulas
+        if (left == KELVIN && right == KELVIN)
+        {
+            output = input;
+        }
+        else if (left == KELVIN && right == FAHRENHEIT)
         {
             output = (input * (9 / 5) - 459.67);
         }
@@ -56,11 +83,37 @@ public class Temperature
         {
             output = (input * (9 / 5) - 273);
         }
+        //celsius formulas
+        else if (left == CELSIUS && right == KELVIN)
+        {
+            output = input + 273.15;
+        }
+        else if (left == CELSIUS && right == FAHRENHEIT)
+        {
+            output = input * (9 / 5) + 32;
+        }
+        else if (left == CELSIUS && right == CELSIUS)
+        {
+            output = input;
+        }
+        // fahrenheit formulas
+        else if (left == FAHRENHEIT && right == KELVIN)
+        {
+            output = (input + 459.67) * (5 / 9);
+        }
+        else if (left == FAHRENHEIT && right == FAHRENHEIT)
+        {
+            output = input;
+        }
+        else if (left == FAHRENHEIT && right == CELSIUS)
+        {
+            output =  (input - 32) * (5 / 9);
+        }
         else
         {
-            output = 0; //error dialog
+            output = 0; //add error dialog
         }
             
         return Double.toString(output);
-    } 
-}
+    } //convert
+} //Temperature
