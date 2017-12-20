@@ -24,7 +24,7 @@ public class Weight
     private final double kg = 1; //common unit
     private final double tonne = .001;
         
-    public double insert(int type, int sType, double value)
+    public String insertWeight(int type, int sType, double value)
     {
         double l=0;
         double r=0;
@@ -57,16 +57,16 @@ public class Weight
                 JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);
         }//switch
         
-        double output = convert(l, r, value);
+        String output = convert(l, r, value);
         
         return output;
     }//insert
     
 
-    public double convert(double l, double r, double input)
+    public String convert(double l, double r, double input)
     {
         double ratio = r/l;
         double output = input*ratio;        
-        return output;
+        return Double.toString(output);
     } //convert
 }//weight

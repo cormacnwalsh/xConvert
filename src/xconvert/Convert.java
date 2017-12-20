@@ -27,8 +27,49 @@ public class Convert {
                 + "4 - EXIT"));
         
         switch(option){
-            case 1 : 
-                break;
+            case 1 :
+                Weight w = new Weight();
+                select = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                        + "1 - Imperial\n"
+                        + "2 - Metric\n"
+                        + "3 - BACK"));
+                
+                if(select == 1){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - inches\n"
+                            + "2 - feet\n"
+                            + "3 - miles\n"
+                            + "4 - BACK"));
+                    
+                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters\n"
+                            + "2 - Meters\n"
+                            + "3 - Kilometers\n"
+                            + "BACK"));
+                            
+                    output = w.insertWeight(type,sType,value);
+                    
+                }
+                /*else if(select == 2){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters\n"
+                            + "2 - Meters\n"
+                            + "3 - Kilometers\n"
+                            + "BACK"));
+                    
+                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - inches\n"
+                            + "2 - feet\n"
+                            + "3 - miles\n"
+                            + "4 - BACK"));
+                    
+                    output = w.insert2(type,sType,value);
+                }
+                break;*/
             
             case 2 : 
                 Length l = new Length();
