@@ -45,11 +45,14 @@ public class convertForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(311, 251));
         setMinimumSize(new java.awt.Dimension(311, 251));
+        setResizable(false);
 
         jWeightIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ounce", "pound", "stone" }));
         jWeightIn.setToolTipText("");
+        jWeightIn.setEnabled(false);
 
         jWeightOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
+        jWeightOut.setEnabled(false);
 
         label.setFont(new java.awt.Font("Vivaldi", 0, 48)); // NOI18N
         label.setText("xConvert");
@@ -62,6 +65,7 @@ public class convertForm extends javax.swing.JFrame {
         });
 
         jSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Weight", "Length", "Temperature" }));
+        jSelect.setSelectedItem(null);
         jSelect.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jSelectItemStateChanged(evt);
@@ -69,16 +73,17 @@ public class convertForm extends javax.swing.JFrame {
         });
 
         jLengthIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "inches", "feet", "miles" }));
+        jLengthIn.setEnabled(false);
 
         jLengthOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "centimeters", "meters", "kilometers" }));
+        jLengthOut.setEnabled(false);
 
         jTempIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "fahrenheit", "celsius" }));
+        jTempIn.setEnabled(false);
 
         jTempOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
-
-        jInField.setText("jTextField1");
-
-        jOutField.setText("jTextField1");
+        jTempOut.setSelectedItem(null);
+        jTempOut.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +155,8 @@ public class convertForm extends javax.swing.JFrame {
         }
         else if(jSelect.getSelectedItem().equals("Length")){
             lengthCalc();
-        }else if(jSelect.getSelectedItem().equals("Temperature")){
+        }
+        else if(jSelect.getSelectedItem().equals("Temperature")){
             tempCalc();
         }
         
@@ -161,12 +167,24 @@ public class convertForm extends javax.swing.JFrame {
         if(jSelect.getSelectedItem().equals("Weight")){
             jWeightIn.setEnabled(true);
             jWeightOut.setEnabled(true);
+            jLengthIn.setEnabled(false);
+            jLengthOut.setEnabled(false);
+            jTempIn.setEnabled(false);
+            jTempOut.setEnabled(false);
             
         }else if(jSelect.getSelectedItem().equals("Length")){
+            jWeightIn.setEnabled(false);
+            jWeightOut.setEnabled(false);
             jLengthIn.setEnabled(true);
             jLengthOut.setEnabled(true);
+            jTempIn.setEnabled(false);
+            jTempOut.setEnabled(false);
             
         }else if(jSelect.getSelectedItem().equals("Temperature")){
+            jWeightIn.setEnabled(false);
+            jWeightOut.setEnabled(false);
+            jLengthIn.setEnabled(false);
+            jLengthOut.setEnabled(false);
             jTempIn.setEnabled(true);
             jTempOut.setEnabled(true);
         }
@@ -176,7 +194,7 @@ public class convertForm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -205,14 +223,13 @@ public class convertForm extends javax.swing.JFrame {
             public void run() {
                 new convertForm().setVisible(true);
                 
-                jConvertButton.setEnabled(false);
-                jTempIn.setEnabled(false);
-                jTempOut.setEnabled(false);
-                jWeightIn.setEnabled(false);
-                jWeightOut.setEnabled(false);
-                jLengthIn.setEnabled(false);
-                jLengthOut.setEnabled(false);
-                
+                jConvertButton.setVisible(false);
+                jTempIn.setVisible(false);
+                jTempOut.setVisible(false);
+                jWeightIn.setVisible(false);
+                jWeightOut.setVisible(false);
+                jLengthIn.setVisible(false);
+                jLengthOut.setVisible(false);               
             }
         });
     }
