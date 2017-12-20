@@ -27,8 +27,8 @@ public class XConvert
                 c.start();
                 
             }else if(choice == 1){
-
-                convertForm.run();
+                convertForm f = new convertForm();
+                f.setVisible(true);
                 
             }else if(choice == 2){
                 open = false;
@@ -37,7 +37,7 @@ public class XConvert
         }
         
         JOptionPane.showMessageDialog(null, "Shutting down");
-        JOptionPane.showMessageDialog(null, "");
+
         JOptionPane.showMessageDialog(null, "Douchecanoe!");
         
     } //End Main
