@@ -7,7 +7,7 @@ package xconvert;
 
 /**
  *
- * @author Cormac, Darragh, Anthony
+ * 
  */
 public class Temperature
 {   
