@@ -33,11 +33,11 @@ public class Temperature
                 break;
             
             case 2:
-                left = CELSIUS;
+                left = FAHRENHEIT;
                 break;
             
             case 3:
-                left = FAHRENHEIT;
+                left = CELSIUS;
                 break;
             default:
                 left = KELVIN;
@@ -50,11 +50,11 @@ public class Temperature
                 break;
             
             case 2:
-                right = CELSIUS;
+                right = FAHRENHEIT;
                 break;
             
             case 3:
-                right = FAHRENHEIT;
+                right = CELSIUS;
                 break;
                 
             default:
@@ -77,20 +77,20 @@ public class Temperature
         }
         else if (left == KELVIN && right == FAHRENHEIT)
         {
-            output = (input * (9 / 5) - 459.67);
+            output = (input * 1.8) - 459.67;
         }
         else if (left == KELVIN && right == CELSIUS)
         {
-            output = (input * (9 / 5) - 273);
+            output = (input - 273.15);
         }
         //celsius formulas
         else if (left == CELSIUS && right == KELVIN)
         {
-            output = input + 273.15;
+            output = (input + 273.15);
         }
         else if (left == CELSIUS && right == FAHRENHEIT)
         {
-            output = input * (9 / 5) + 32;
+            output = (input * 1.8) + 32;
         }
         else if (left == CELSIUS && right == CELSIUS)
         {
@@ -99,7 +99,7 @@ public class Temperature
         // fahrenheit formulas
         else if (left == FAHRENHEIT && right == KELVIN)
         {
-            output = (input + 459.67) * (5 / 9);
+            output = (input + 459.67) * 0.5556;
         }
         else if (left == FAHRENHEIT && right == FAHRENHEIT)
         {
@@ -107,7 +107,7 @@ public class Temperature
         }
         else if (left == FAHRENHEIT && right == CELSIUS)
         {
-            output =  (input - 32) * (5 / 9);
+            output =  (input - 32) * 0.5556;
         }
         else
         {
