@@ -82,7 +82,6 @@ public class convertForm extends javax.swing.JFrame {
         jTempIn.setEnabled(false);
 
         jTempOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
-        jTempOut.setSelectedItem(null);
         jTempOut.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
