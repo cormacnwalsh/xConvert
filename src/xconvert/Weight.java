@@ -66,30 +66,30 @@ public class Weight
     {
         double l=0;
         double r=0;
-        switch(sType)
+        switch(type)
         {
             case 1:
-                r = g;
+                l = g;
                 break;
             case 2:
-                r = kg;
+                l = kg;
                 break;
             case 3 :
-                r = tonne;
+                l = tonne;
                 break;
             default:
                 JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);         
         }//switch
-        switch(type)
+        switch(sType)
         {
             case 1:
-                l = ounce;
+                r = ounce;
                 break;
             case 2:
-                l = pound;
+                r = pound;
                 break;
             case 3 :
-                l = stone;
+                r = stone;
                 break;
             default:
                 JOptionPane.showMessageDialog(null, " ", "Invalid selection", JOptionPane.ERROR_MESSAGE);
