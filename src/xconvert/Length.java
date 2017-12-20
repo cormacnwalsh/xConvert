@@ -21,7 +21,7 @@ public class Length{
     private final double mt = 1;
     private final double km = .001;
     
-    public String insert(int type, int sType, double value){
+    public double insert(int type, int sType, double value){
         double l = 0;
         double r = 0;
         switch(type){
@@ -52,12 +52,12 @@ public class Length{
                 JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         
-        String output = convert(l, r, value);
+        double output = convert(l, r, value);
         
         return output;
     }
     
-    public String insert2(int type, int sType, double value){
+    public double insert2(int type, int sType, double value){
         double l = 0;
         double r = 0;
         switch(type){
@@ -89,15 +89,15 @@ public class Length{
                 JOptionPane.showMessageDialog(null, "Do it right asshole");
         }
         
-        String output = convert(l, r, value);
+        double output = convert(l, r, value);
         
         return output;
     }
     
 
-    private String convert(double l, double r, double input) {
+    private double convert(double l, double r, double input) {
         double ratio = r/l;
         double output = input*ratio;        
-        return Double.toString(output);
+        return output;
     } 
 }

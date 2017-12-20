@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Convert {
     
-    private String output;
+    private double output;
     private int select;
     
     public void start(){
