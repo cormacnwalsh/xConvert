@@ -220,14 +220,13 @@ public class convertForm extends javax.swing.JFrame {
             public void run() {
                 new convertForm().setVisible(true);
                 
-                jConvertButton.setEnabled(false);
-                jTempIn.setEnabled(false);
-                jTempOut.setEnabled(false);
-                jWeightIn.setEnabled(false);
-                jWeightOut.setEnabled(false);
-                jLengthIn.setEnabled(false);
-                jLengthOut.setEnabled(false);
-                new convertForm().setVisible(true);
+                jConvertButton.setVisible(false);
+                jTempIn.setVisible(false);
+                jTempOut.setVisible(false);
+                jWeightIn.setVisible(false);
+                jWeightOut.setVisible(false);
+                jLengthIn.setVisible(false);
+                jLengthOut.setVisible(false);
             }
         });
     }
