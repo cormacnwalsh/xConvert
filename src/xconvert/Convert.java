@@ -15,6 +15,7 @@ public class Convert {
     
     private double output;
     private int select;
+    private double value;
     
     public void start(){
         
@@ -24,7 +25,8 @@ public class Convert {
                 + "1 - Weight\n"
                 + "2 - Length\n"
                 + "3 - Temp\n"
-                + "4 - EXIT"));
+                + "4 - Area\n"
+                + "5 - EXIT"));
         
         switch(option){
             case 1 :
@@ -41,7 +43,7 @@ public class Convert {
                             + "3 - stone\n"
                             + "4 - BACK"));
                     
-                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - gram\n"
@@ -59,7 +61,7 @@ public class Convert {
                             + "3 - tonne\n"
                             + "BACK"));
                     
-                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - ounce\n"
@@ -85,7 +87,7 @@ public class Convert {
                             + "3 - miles\n"
                             + "4 - BACK"));
                     
-                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - Centimeters\n"
@@ -102,7 +104,7 @@ public class Convert {
                             + "3 - Kilometers\n"
                             + "BACK"));
                     
-                    double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                     
                     int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
                             + "1 - inches\n"
@@ -122,7 +124,7 @@ public class Convert {
                         + "3 - Celsius\n"
                         + "4 - BACK"));
                 
-                double value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
                 
                 int right = Integer.parseInt(JOptionPane.showInputDialog("Select\n"
                         + "1 - Kelvin\n"
@@ -134,8 +136,52 @@ public class Convert {
                 
                 break;
                 
+            case 4:
+                Area a = new Area();
+                select = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                        + "1 - Imperial\n"
+                        + "2 - Metric\n"
+                        + "3 - BACK"));
                 
-        }
+                if(select == 1){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - inch Sq\n"
+                            + "2 - feet Sq\n"
+                            + "3 - miles Sq\n"
+                            + "4 - BACK"));
+                    
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters Sq\n"
+                            + "2 - Meters Sq\n"
+                            + "3 - Kilometers Sq\n"
+                            + "BACK"));
+                            
+                    output = Double.parseDouble(a.insertArea(type,sType,value));
+                    
+                }else if(select == 2){
+                    int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - Centimeters Sq\n"
+                            + "2 - Meters Sq\n"
+                            + "3 - Kilometers Sq\n"
+                            + "BACK"));
+                    
+                    value = Double.parseDouble(JOptionPane.showInputDialog("Enter value"));
+                    
+                    int sType = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
+                            + "1 - inches Sq\n"
+                            + "2 - feet Sq\n"
+                            + "3 - miles Sq\n"
+                            + "4 - BACK"));
+                    
+                    output = Double.parseDouble(a.insertArea2(type,sType,value));
+                }
+                break;
+                
+            case 5: 
+                System.exit(0);
+        }//switch
         
         JOptionPane.showMessageDialog(null, "Answer is: " + output);
     }
