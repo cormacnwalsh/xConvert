@@ -158,7 +158,7 @@ public class Convert {
                             + "3 - Kilometers Sq\n"
                             + "BACK"));
                             
-                    output = a.insertArea(type,sType,value);
+                    output = Double.parseDouble(a.insertArea(type,sType,value));
                     
                 }else if(select == 2){
                     int type = Integer.parseInt(JOptionPane.showInputDialog("Select:\n"
@@ -175,7 +175,7 @@ public class Convert {
                             + "3 - miles Sq\n"
                             + "4 - BACK"));
                     
-                    output = a.insertArea2(type,sType,value);
+                    output = Double.parseDouble(a.insertArea2(type,sType,value));
                 }
                 break;
                 
