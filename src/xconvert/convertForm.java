@@ -49,8 +49,10 @@ public class convertForm extends javax.swing.JFrame {
 
         jWeightIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ounce", "pound", "stone" }));
         jWeightIn.setToolTipText("");
+        jWeightIn.setEnabled(false);
 
         jWeightOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
+        jWeightOut.setEnabled(false);
 
         label.setFont(new java.awt.Font("Vivaldi", 0, 48)); // NOI18N
         label.setText("xConvert");
@@ -71,16 +73,17 @@ public class convertForm extends javax.swing.JFrame {
         });
 
         jLengthIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "inches", "feet", "miles" }));
+        jLengthIn.setEnabled(false);
 
         jLengthOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "centimeters", "meters", "kilometers" }));
+        jLengthOut.setEnabled(false);
 
         jTempIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "fahrenheit", "celsius" }));
+        jTempIn.setEnabled(false);
 
         jTempOut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "gram", "kilogram", "tonne" }));
-
-        jInField.setText("jTextField1");
-
-        jOutField.setText("jTextField1");
+        jTempOut.setSelectedItem(null);
+        jTempOut.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,7 +194,7 @@ public class convertForm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -226,7 +229,7 @@ public class convertForm extends javax.swing.JFrame {
                 jWeightIn.setVisible(false);
                 jWeightOut.setVisible(false);
                 jLengthIn.setVisible(false);
-                jLengthOut.setVisible(false);
+                jLengthOut.setVisible(false);               
             }
         });
     }

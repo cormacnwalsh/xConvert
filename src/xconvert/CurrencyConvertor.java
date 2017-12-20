@@ -91,7 +91,7 @@ public class CurrencyConvertor {
         return response;
     }
 
-    public static void main(String[] args) throws IOException {
+    public void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
 
