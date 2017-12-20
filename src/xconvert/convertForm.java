@@ -45,6 +45,7 @@ public class convertForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(311, 251));
         setMinimumSize(new java.awt.Dimension(311, 251));
+        setResizable(false);
 
         jWeightIn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ounce", "pound", "stone" }));
         jWeightIn.setToolTipText("");
@@ -62,6 +63,7 @@ public class convertForm extends javax.swing.JFrame {
         });
 
         jSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Weight", "Length", "Temperature" }));
+        jSelect.setSelectedItem(null);
         jSelect.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jSelectItemStateChanged(evt);
@@ -150,7 +152,8 @@ public class convertForm extends javax.swing.JFrame {
         }
         else if(jSelect.getSelectedItem().equals("Length")){
             lengthCalc();
-        }else if(jSelect.getSelectedItem().equals("Temperature")){
+        }
+        else if(jSelect.getSelectedItem().equals("Temperature")){
             tempCalc();
         }
         
@@ -161,12 +164,24 @@ public class convertForm extends javax.swing.JFrame {
         if(jSelect.getSelectedItem().equals("Weight")){
             jWeightIn.setEnabled(true);
             jWeightOut.setEnabled(true);
+            jLengthIn.setEnabled(false);
+            jLengthOut.setEnabled(false);
+            jTempIn.setEnabled(false);
+            jTempOut.setEnabled(false);
             
         }else if(jSelect.getSelectedItem().equals("Length")){
+            jWeightIn.setEnabled(false);
+            jWeightOut.setEnabled(false);
             jLengthIn.setEnabled(true);
             jLengthOut.setEnabled(true);
+            jTempIn.setEnabled(false);
+            jTempOut.setEnabled(false);
             
         }else if(jSelect.getSelectedItem().equals("Temperature")){
+            jWeightIn.setEnabled(false);
+            jWeightOut.setEnabled(false);
+            jLengthIn.setEnabled(false);
+            jLengthOut.setEnabled(false);
             jTempIn.setEnabled(true);
             jTempOut.setEnabled(true);
         }
@@ -212,7 +227,7 @@ public class convertForm extends javax.swing.JFrame {
                 jWeightOut.setEnabled(false);
                 jLengthIn.setEnabled(false);
                 jLengthOut.setEnabled(false);
-                
+                new convertForm().setVisible(true);
             }
         });
     }

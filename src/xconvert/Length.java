@@ -15,11 +15,11 @@ public class Length{
     //Base unit for ratio is meter
     private final double inches = 39.3701;
     private final double feet = 3.28084;
-    private final double miles = .0016093;
+    private final double miles = 0.000621371;
     
     private final double cm = 100;
     private final double mt = 1;
-    private final double km = .001;
+    private final double km = 0.001;
     
     public double insert(int type, int sType, double value){
         double l = 0;
